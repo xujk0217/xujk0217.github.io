@@ -1,96 +1,381 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的網站</title>
-    <!-- 引入 Bootstrap CSS 檔案 -->
+    
+    <!-- ========== ✏️ 修改這裡：網站標題 ========== -->
+    <!-- 範例：我的個人網站 | 王小明 -->
+    <title>我的個人網站 | 王小明</title>
+    <meta name="description" content="這是我的個人作品集網站">
+    
+    <!-- 引入 Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="githubweb.css">
+    <!-- 引入 Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- 引入自訂樣式 -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- 導覽列 -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- ==================== 導覽列 ==================== -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">我的網站</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- ✏️ 修改這裡：網站名稱/Logo -->
+        <!-- 範例：王小明 -->
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-code-slash me-2"></i>王小明
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <!-- 連結1：個人資料 -->
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#myself">個人資料</a>
+                    <a class="nav-link" href="#about">關於我</a>
                 </li>
-                <!-- 連結2：我的作品 -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#mywork">我的作品</a>
+                    <a class="nav-link" href="#skills">技能</a>
                 </li>
-                <!-- 連結3：我的筆記 -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#myhobby">我的興趣</a>
+                    <a class="nav-link" href="#works">作品集</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#hobbies">興趣</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">聯絡我</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- 自我介紹 -->
-<div class="container mt-5" id="myself">
-    <h1>歡迎來到我的網站</h1>
-    <p>我是[您的名字]，這是我的個人網站。我熱愛[您的興趣或專業領域]，並在這個網站上分享我的作品和筆記。請隨時瀏覽我的內容，如果您有任何問題或反饋，請不要猶豫與我聯繫。</p>
-</div>
+<!-- ==================== Hero 區塊（個人介紹） ==================== -->
+<section class="hero-section" id="about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <!-- ✏️ 修改這裡：替換成你的大頭照 URL -->
+                <!-- 範例：https://i.imgur.com/xxxxxxx.jpg 或上傳到 GitHub 後使用相對路徑 images/photo.jpg -->
+                <img src="https://via.placeholder.com/180" alt="個人照片" class="profile-img">
+            </div>
+            <div class="col-lg-8 text-center text-lg-start">
+                <!-- ✏️ 修改這裡：你的名字和自我介紹 -->
+                <!-- 範例：嗨，我是王小明 👋 -->
+                <h1 class="display-4 fw-bold mb-3">嗨，我是王小明 👋</h1>
+                <!-- ✏️ 修改這裡：自我介紹內容 -->
+                <p class="lead mb-4">
+                    我是一名對程式設計充滿熱情的學生。<br>
+                    喜歡探索新技術，用程式解決問題，並創造有趣的專案。
+                </p>
+                <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+                    <a href="#works" class="btn btn-light btn-lg">查看作品</a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg">聯絡我</a>
+                </div>
+                
+                <!-- 社交媒體連結 -->
+                <div class="mt-4">
+                    <!-- ✏️ 修改這裡：替換成你的社交媒體連結 -->
+                    <!-- 範例：https://github.com/xujk0217 -->
+                    <a href="https://github.com/xujk0217" class="social-link" target="_blank" title="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <!-- 範例：https://www.instagram.com/your_username -->
+                    <a href="https://www.instagram.com/your_username" class="social-link" target="_blank" title="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <!-- 範例：https://www.youtube.com/@your_channel -->
+                    <a href="https://www.youtube.com/@your_channel" class="social-link" target="_blank" title="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <!-- 範例：mailto:example@gmail.com -->
+                    <a href="mailto:example@gmail.com" class="social-link" title="Email">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<!-- 興趣 -->
-<div class="container mt-5" id="myhobby">
-    <h2>我的興趣</h2>
-    <p>我對以下興趣非常感興趣：</p>
-    <ul>
-        <li>興趣1</li>
-        <li>興趣2</li>
-        <li>興趣3</li>
-        <!-- 在這裡添加更多興趣 -->
-    </ul>
-</div>
+<!-- ==================== 技能區塊 ==================== -->
+<section id="skills" class="bg-light">
+    <div class="container">
+        <h2 class="section-title">我的技能</h2>
+        <p class="text-muted mb-4">這些是我正在學習或已經掌握的技能</p>
+        
+        <div class="d-flex flex-wrap">
+            <!-- ✏️ 修改這裡：替換成你的技能 -->
+            <!-- 複製 <span class="skill-badge">技能名稱</span> 來新增更多 -->
+            <span class="skill-badge">HTML</span>
+            <span class="skill-badge">CSS</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">Git</span>
+            <span class="skill-badge">Bootstrap</span>
+            <!-- 更多技能範例：React、Vue、Node.js、Java、C++、Photoshop、Figma -->
+        </div>
+    </div>
+</section>
 
-<!-- 作品 -->
-<div class="container mt-5" id="mywork">
-    <h2>我的作品</h2>
-    <p>這是一些我最近完成的作品：</p>
-    <ul>
-        <li>作品1</li>
-        <li>作品2</li>
-        <li>作品3</li>
-        <!-- 在這裡添加更多作品 -->
-    </ul>
-</div>
+<!-- ==================== 作品集區塊 ==================== -->
+<section id="works">
+    <div class="container">
+        <h2 class="section-title">作品集</h2>
+        <p class="text-muted mb-5">這是我完成的一些專案和作品</p>
+        
+        <div class="row g-4">
+            <!-- ✏️ 作品卡片 1（複製整個 col-md-6 區塊可新增更多作品） -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <!-- ✏️ 修改這裡：作品截圖 URL -->
+                    <!-- 範例：images/project1.png 或 https://i.imgur.com/xxxxxxx.png -->
+                    <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="作品1">
+                    <div class="card-body">
+                        <!-- ✏️ 修改這裡：作品名稱 -->
+                        <h5 class="card-title">我的第一個網站</h5>
+                        <!-- ✏️ 修改這裡：作品描述 -->
+                        <p class="card-text text-muted">使用 HTML 和 CSS 製作的個人介紹網頁，學習網頁基礎架構。</p>
+                        <div class="d-flex gap-2">
+                            <!-- ✏️ 修改這裡：作品展示連結 -->
+                            <!-- 範例：https://xujk0217.github.io/project1/ -->
+                            <a href="https://xujk0217.github.io/project1/" class="btn btn-primary btn-sm">
+                                <i class="bi bi-eye me-1"></i>查看
+                            </a>
+                            <!-- ✏️ 修改這裡：GitHub 原始碼連結 -->
+                            <!-- 範例：https://github.com/xujk0217/project1 -->
+                            <a href="https://github.com/xujk0217/project1" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-github me-1"></i>原始碼
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ✏️ 作品卡片 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="作品2">
+                    <div class="card-body">
+                        <h5 class="card-title">計算機程式</h5>
+                        <p class="card-text text-muted">使用 JavaScript 製作的網頁計算機，支援基本四則運算。</p>
+                        <div class="d-flex gap-2">
+                            <a href="#" class="btn btn-primary btn-sm">
+                                <i class="bi bi-eye me-1"></i>查看
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-github me-1"></i>原始碼
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ✏️ 作品卡片 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="作品3">
+                    <div class="card-body">
+                        <h5 class="card-title">待辦事項清單</h5>
+                        <p class="card-text text-muted">可新增、刪除、標記完成的 Todo List 應用程式。</p>
+                        <div class="d-flex gap-2">
+                            <a href="#" class="btn btn-primary btn-sm">
+                                <i class="bi bi-eye me-1"></i>查看
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-github me-1"></i>原始碼
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 💡 提示：複製上面任一個 col-md-6 區塊可以新增更多作品 -->
+        </div>
+    </div>
+</section>
 
-<!-- 即時時間 -->
-<div class="container mt-5">
-    <h2>即時時間</h2>
-    <p id="current-time"></p>
-</div>
+<!-- ==================== 興趣區塊 ==================== -->
+<section id="hobbies" class="bg-light">
+    <div class="container">
+        <h2 class="section-title">我的興趣</h2>
+        <p class="text-muted mb-5">除了程式設計，我還喜歡這些事情</p>
+        
+        <div class="row g-4">
+            <!-- ✏️ 興趣 1（複製整個 col-6 區塊可新增更多興趣） -->
+            <!-- 圖示參考：https://icons.getbootstrap.com/ -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="hobby-card">
+                    <!-- ✏️ 修改這裡：更換圖示 class -->
+                    <!-- 常用圖示：bi-controller(遊戲) bi-music-note-beamed(音樂) bi-camera(攝影) bi-book(閱讀)
+                         bi-bicycle(騎車) bi-film(電影) bi-palette(繪畫) bi-code-slash(程式) bi-cup-hot(咖啡) -->
+                    <div class="hobby-icon">
+                        <i class="bi bi-controller"></i>
+                    </div>
+                    <!-- ✏️ 修改這裡：興趣名稱 -->
+                    <h5>遊戲</h5>
+                </div>
+            </div>
+            
+            <!-- ✏️ 興趣 2 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="bi bi-music-note-beamed"></i>
+                    </div>
+                    <h5>音樂</h5>
+                </div>
+            </div>
+            
+            <!-- ✏️ 興趣 3 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="bi bi-camera"></i>
+                    </div>
+                    <h5>攝影</h5>
+                </div>
+            </div>
+            
+            <!-- ✏️ 興趣 4 -->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <h5>閱讀</h5>
+                </div>
+            </div>
+            
+            <!-- 💡 提示：複製上面任一個 col-6 區塊可以新增更多興趣 -->
+        </div>
+    </div>
+</section>
 
-<!-- 引入 Bootstrap JavaScript 檔案（必要時） -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<!-- ==================== 聯絡我區塊 ==================== -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h2 class="mb-4">聯絡我</h2>
+                <p class="text-light opacity-75 mb-4">
+                    如果你對我的作品有興趣，或是想要一起合作，歡迎透過以下方式聯絡我！
+                </p>
+                
+                <!-- ✏️ 修改這裡：你的聯絡資訊 -->
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <div>
+                        <small class="text-light opacity-50">Email</small>
+                        <!-- ✏️ 範例：example@gmail.com -->
+                        <p class="mb-0">example@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <div>
+                        <small class="text-light opacity-50">位置</small>
+                        <!-- ✏️ 範例：台北、台灣 -->
+                        <p class="mb-0">台灣</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="bi bi-github"></i>
+                    </div>
+                    <div>
+                        <small class="text-light opacity-50">GitHub</small>
+                        <!-- ✏️ 範例：github.com/xujk0217 -->
+                        <p class="mb-0">github.com/xujk0217</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <!-- 即時時間小工具 -->
+                <div class="card bg-dark text-white border-0">
+                    <div class="card-body text-center py-5">
+                        <h5 class="mb-3">
+                            <i class="bi bi-clock me-2"></i>現在時間
+                        </h5>
+                        <p id="current-time" class="display-4 fw-bold mb-3" style="font-family: monospace;"></p>
+                        <p id="current-date" class="text-light opacity-75"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<!-- JavaScript 來顯示即時時間 -->
+<!-- ==================== 頁尾 ==================== -->
+<footer>
+    <div class="container">
+        <!-- ✏️ 修改這裡：你的名字 -->
+        <!-- 範例：© 2025 王小明. All Rights Reserved. -->
+        <p class="mb-2">© 2025 王小明. All Rights Reserved.</p>
+        <p class="small mb-2">使用 Bootstrap 5 製作</p>
+        <p class="small mb-0">
+            <a href="https://www.instagram.com/gdg.ntpu/" target="_blank" class="text-light opacity-75 text-decoration-none">
+                🚀 GDG on Campus NTPU 課程教材
+            </a>
+        </p>
+    </div>
+</footer>
+
+<!-- 引入 Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
+    // 即時時間功能
     function updateTime() {
-        const currentTimeElement = document.getElementById("current-time");
         const now = new Date();
+        
+        // 更新時間
         const hours = now.getHours().toString().padStart(2, "0");
         const minutes = now.getMinutes().toString().padStart(2, "0");
         const seconds = now.getSeconds().toString().padStart(2, "0");
-        currentTimeElement.textContent = `${hours}:${minutes}:${seconds}`;
+        document.getElementById("current-time").textContent = `${hours}:${minutes}:${seconds}`;
+        
+        // 更新日期
+        const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+        document.getElementById("current-date").textContent = now.toLocaleDateString('zh-TW', options);
     }
-
-    // 更新時間每秒一次
+    
+    // 每秒更新一次
     setInterval(updateTime, 1000);
-
-    // 初始呼叫以顯示當前時間
     updateTime();
+    
+    // 導覽列滾動效果
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
+        } else {
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+        }
+    });
+    
+    // 平滑滾動
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 </script>
+
 </body>
 </html>

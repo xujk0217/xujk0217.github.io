@@ -1,0 +1,234 @@
+/* ========================================
+   個人網站樣式表
+   ======================================== */
+
+/* ========== 主色調設定 ========== */
+/* 修改這裡可以改變網站整體配色 */
+:root {
+    --primary-color: #6366f1;      /* 主色：紫藍色 */
+    --secondary-color: #8b5cf6;    /* 副色：淺紫色 */
+    --dark-color: #1e293b;         /* 深色：用於文字 */
+    --light-color: #f8fafc;        /* 淺色：用於背景 */
+}
+
+/* 其他配色參考：
+   藍色系：--primary-color: #3b82f6; --secondary-color: #60a5fa;
+   綠色系：--primary-color: #10b981; --secondary-color: #34d399;
+   粉色系：--primary-color: #ec4899; --secondary-color: #f472b6;
+   橘色系：--primary-color: #f97316; --secondary-color: #fb923c;
+   
+   🌟 Google 配色（GDG 推薦）：
+   Google 藍：--primary-color: #4285F4; --secondary-color: #5a9bf6;
+   Google 紅：--primary-color: #EA4335; --secondary-color: #ef6b5f;
+   Google 黃：--primary-color: #FBBC05; --secondary-color: #fcc934;
+   Google 綠：--primary-color: #34A853; --secondary-color: #4fbb6e;
+*/
+
+/* ========== 基本設定 ========== */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: var(--dark-color);
+}
+
+/* ========== 導覽列 ========== */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* ========== Hero 區塊（頁面頂部） ========== */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>');
+    background-size: 60px;
+}
+
+/* 個人照片樣式 */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    object-fit: cover;
+    background-color: #e2e8f0;
+}
+
+/* ========== 區塊標題 ========== */
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+/* ========== 卡片樣式 ========== */
+.card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    background-color: #e2e8f0;
+}
+
+/* ========== 技能標籤 ========== */
+.skill-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ========== 興趣卡片 ========== */
+.hobby-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.hobby-card:hover {
+    transform: translateY(-5px);
+}
+
+.hobby-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* ========== 社交媒體連結 ========== */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 0 8px;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ========== 聯絡區塊 ========== */
+.contact-section {
+    background: var(--dark-color);
+    color: white;
+    padding: 80px 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+/* ========== 頁尾 ========== */
+footer {
+    background: #0f172a;
+    color: #94a3b8;
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* ========== 區塊間距 ========== */
+section {
+    padding: 80px 0;
+}
+
+/* ========== 按鈕樣式 ========== */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn-outline-light {
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-weight: 500;
+}
